@@ -1,0 +1,61 @@
+MainWidget: # ルートに追加
+
+<MainWidget>:
+    BoxLayout:
+        orientation: "vertical"
+        size: root.size
+
+        BoxLayout:
+            size_hint_y: 0.5
+
+        BoxLayout:
+            size_hint_y: 1
+            Image:
+                id: a1
+                allow_stretch: True
+                source: root.ball_src
+
+            Image:
+                id: a2
+                allow_stretch: True
+                source: root.ball_src
+
+        BoxLayout:
+            size_hint_y: 2
+            Image:
+                id: rbt
+                size_hint_y: 1
+                allow_stretch: True
+                source: root.image_src
+
+        BoxLayout:
+            size_hint_y: 1
+            Image:
+                id: a3
+                allow_stretch: True
+                source: root.ball_src
+
+            Image:
+                id: a4
+                allow_stretch: True
+                source: root.ball_src
+        
+        BoxLayout:
+            size_hint_y: 1
+            # ラベル
+            Label:
+                id: msg
+                font_size: 42
+                text: root.text
+
+        BoxLayout:
+            size_hint_y: 1
+            Button:
+                id: praise
+                on_press: root.startPraise()
+                on_release: root.stopPraise()
+                Image:
+                    id: like
+                    allow_stretch: True
+                    source: "./like.png"
+                    center: self.parent.center
